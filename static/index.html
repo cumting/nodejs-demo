@@ -6,14 +6,22 @@
 		<script src="js/jquery.min.js"></script>
 	</head>
 	<body>
-		
+		<ul>
+			<li></li>
+			<li></li>
+		</ul>
 		
 	</body>
 	<script>
+		var text;
 		$.ajax({ url: "/getbase",
-
-		success: function(){
-       console.log(4)
+ 
+		success: function(data){
+			for(var i=0;i<data.length;i++){
+				document.getElementsByTagName("li")[i].innerText=data[i].name+":"+data[i].score
+			}
+			
+				
              }
 		});
 	</script>
